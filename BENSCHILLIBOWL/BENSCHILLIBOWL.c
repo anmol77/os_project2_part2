@@ -100,13 +100,10 @@ Order *GetOrder(BENSCHILLIBOWL* mcg) {
     pthread_cond_broadcast(&(mcg->can_add_orders));
         
     // Release the lock.
-    pthread_mutex_unlock(&(mcg->mutex));
-    
-    
+    pthread_mutex_unlock(&(mcg->mutex));   
     return order;
 
 }
-
 
 /* this methods adds order to rear of queue */
 void AddOrderToBack(Order **orders, Order *order) {
